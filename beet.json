@@ -1,0 +1,29 @@
+{
+    "data_pack": {
+        "load": ["src/datapack"],
+        "name": "Template Datapack"
+    },
+    "resource_pack": {
+        "load": ["src/resourcepack"],
+        "name": "Template Resourcepack"
+    },
+    "pipeline": [
+        "plugins.custom.main",
+        "mecha",
+        "plugins.custom.finalyze"
+    ],
+    "id": "tp",
+    "name": "template",
+    "description": "",
+    "version": "1.0.0a",
+    "require": [
+        "bolt",
+        "bolt_expressions"
+    ],
+    "output": "build",
+    "meta": {
+        "bolt": {
+            "entrypoint": ["tp:main"]
+        }
+    }
+}
