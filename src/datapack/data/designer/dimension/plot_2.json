@@ -1,0 +1,15 @@
+{
+    "type": "designer:plot",
+    "generator": {
+        "type": "minecraft:flat",
+        "settings": {
+            "layers": [
+                {"block": "minecraft:bedrock", "height": 1},
+                {"block": "minecraft:stone", "height": 20},
+                {"block": "minecraft:quartz_block", "height": 50}
+            ],
+            "biome": "minecraft:the_void",
+            "structure_overrides": []
+        }
+    }
+}

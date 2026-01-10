@@ -1,0 +1,2 @@
+execute if score @s d.curr.spawn.point.x = @s d.prev.spawn.point.x if score @s d.curr.spawn.point.y = @s d.prev.spawn.point.y if score @s d.curr.spawn.point.z = @s d.prev.spawn.point.z run return fail
+return 1

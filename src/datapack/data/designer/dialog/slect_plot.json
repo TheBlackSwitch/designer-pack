@@ -1,0 +1,139 @@
+{
+	"type": "minecraft:multi_action",
+	"title": [
+		{
+			"text": "Designer: ",
+			"color": "#80c1ff"
+		},
+		{
+			"text": "Select Plot",
+			"color": "#ffc014"
+		}
+	],
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"contents": ""
+		},
+		{
+			"type": "minecraft:plain_message",
+			"contents": {
+				"text": "Select a plot",
+				"color": "gold"
+			}
+		}
+	],
+	"inputs": [],
+	"can_close_with_escape": true,
+	"pause": false,
+	"after_action": "close",
+	"exit_action": {
+		"label": {
+			"text": "Exit",
+			"color": "red"
+		}
+	},
+    "columns": 1,
+	"actions": [
+		{
+			"label": {
+				"text": "Plot 1: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "Super Flat",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+            "tooltip": {
+                "text": "Just the generic superflat preset"
+            },
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 1"
+			}
+		},
+        {
+			"label": {
+				"text": "Plot 2: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "Quartz Super Flat",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 2"
+			},
+            "tooltip": {
+                "text": "A superflat world with quartz blocks intead of grass and dirt"
+            }
+		},
+        {
+			"label": {
+				"text": "Plot 3: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+				        "text": " Redstone Ready",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 3"
+			},
+            "tooltip": {
+                "text": "A superflat world made of sandstone instead of grass and dirt"
+            }
+		},
+        {
+			"label": {
+				"text": "Plot 4: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "The Void",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 4"
+			},
+            "tooltip": {
+                "text": "A completely empty world"
+            }
+		},
+        {
+			"label": {
+				"text": "Plot 5: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "Overworld Copy",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 5"
+			},
+            "tooltip": {
+                "text": "An exact copy of the overworld"
+            }
+		}
+	]
+}

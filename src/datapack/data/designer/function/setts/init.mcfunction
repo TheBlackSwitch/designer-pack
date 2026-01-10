@@ -1,0 +1,1 @@
+data merge storage designer:setts {generated:true,main_gamemode:"survival",plot_gamemode:"creative",gamemode_switch:true}

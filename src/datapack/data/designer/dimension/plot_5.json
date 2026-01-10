@@ -1,0 +1,11 @@
+{
+    "type": "designer:plot",
+    "generator": {
+        "type": "minecraft:noise",
+        "settings": "overworld",
+        "biome_source": {
+            "type": "multi_noise",
+            "preset": "overworld"
+        }
+    }
+}

@@ -1,0 +1,2 @@
+execute as @a[scores={d.cod_spawn_egg_use=1..}] at @s at @e[type=marker,distance=..25,tag=d.designers_table.place] run function designer:designers_table/place
+execute as @e[type=interaction,tag=d.designers_table] run function designer:designers_table/interact/run
