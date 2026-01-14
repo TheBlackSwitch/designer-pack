@@ -1,2 +1,0 @@
-data modify storage theblackswitch:versions packs append value {pack:"designer_pack",version:[2,3,0],lib_version:[1,0,6]}
-data modify storage theblackswitch:versions lib.loaded_from set value "designer_pack"

@@ -1,0 +1,113 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "Datapacks - ",
+    "extra": [
+      {
+        "text": "Designer Pack",
+        "color": "gold"
+      }
+    ],
+    "color": "aqua"
+  },
+  "external_title": "Designer Pack",
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": ""
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Design your builds directly in your survival world without interference! \n",
+        "extra": [
+          {
+            "text": "/trigger designer",
+            "extra": [
+              {
+                "text": " to start using!",
+                "bold": false,
+                "underlined": false
+              }
+            ],
+            "color": "aqua",
+            "bold": false,
+            "underlined": true,
+            "click_event": {
+              "action": "run_command",
+              "command": "trigger designer_config set 90001"
+            },
+            "hover_event": {
+              "action": "show_text",
+              "value": "Open in chat"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "v2.3.0a\n By ",
+        "extra": [
+          {
+            "text": "theblackswitch",
+            "color": "gray",
+            "underlined": true,
+            "click_event": {
+              "action": "open_url",
+              "url": "https://theblackswitch.com"
+            },
+            "hover_event": {
+              "action": "show_text",
+              "value": "Link: theblackswitch.com"
+            }
+          }
+        ],
+        "color": "gray"
+      }
+    }
+  ],
+  "inputs": [],
+  "after_action": "none",
+  "pause": false,
+  "exit_action": {
+    "label": "<- Back",
+    "width": 200,
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "smithed:data_packs"
+    }
+  },
+  "columns": 2,
+  "actions": [
+    {
+      "label": "Website",
+      "tooltip": {
+        "text": "Link: modrinth.com"
+      },
+      "width": 100,
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://modrinth.com/datapack/designer-pack"
+      }
+    },
+    {
+      "label": "Support Me",
+      "tooltip": "Link: buymeacoffee.com",
+      "width": 100,
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://buymeacoffee.com/theblackswitch"
+      }
+    },
+    {
+      "label": "Configs ->",
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger designer_config set 12353"
+      }
+    }
+  ]
+}

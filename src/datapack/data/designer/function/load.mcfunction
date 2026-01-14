@@ -1,8 +1,16 @@
 tellraw @a [{"text":"Designer Pack Reloaded!","color":"green","bold": true}]
 
-execute unless data storage designer:setts generated run function designer:setts/init
+#-------------------------------------------------------
+## Enable Library Features
+#-------------------------------------------------------
 
-##Scoreboards
+function #theblackswitch:$version$/slow_tick/enable
+
+
+#-------------------------------------------------------
+## Scoreboards
+#-------------------------------------------------------
+
 scoreboard objectives add designer trigger
 scoreboard objectives add d.state dummy
 scoreboard objectives add d.XpLevels dummy
@@ -21,12 +29,19 @@ scoreboard objectives add d.prev.spawn.point.z dummy
 
 scoreboard objectives add d.cod_spawn_egg_use used:cod_spawn_egg
 
+#-------------------------------------------------------
+## Other Inits
+#-------------------------------------------------------
 
-##AA compat
+execute unless data storage designer:setts generated run function designer:setts/init
+
+#-------------------------------------------------------
+## AA2 Compat
+#-------------------------------------------------------
+
 scoreboard objectives add d.prev_artifact_slot_1 dummy
 scoreboard objectives add d.prev_artifact_slot_2 dummy
 scoreboard objectives add d.prev_artifact_slot_3 dummy
 scoreboard objectives add d.was_focused dummy
 
-
-schedule function designer:set_version 1t replace
+schedule function designer:tick 1t

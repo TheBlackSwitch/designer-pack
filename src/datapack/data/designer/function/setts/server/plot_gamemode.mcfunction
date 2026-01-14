@@ -3,7 +3,7 @@ execute if data storage designer:setts {plot_gamemode:"creative"} run data modif
 execute if data storage designer:setts {plot_gamemode:"spectator"} run data modify storage designer:temp plot_gamemode set value "adventure"
 execute if data storage designer:setts {plot_gamemode:"adventure"} run data modify storage designer:temp plot_gamemode set value "survival"
 
-execute at @s run playsound block.dispenser.dispense master @s ~ ~ ~
+playsound minecraft:entity.breeze.idle_air ui @a ~ ~ ~ 1 1.4
 playsound minecraft:item.book.page_turn block @s ~ ~ ~ 5 1
 
 data modify storage designer:setts plot_gamemode set from storage designer:temp plot_gamemode
@@ -14,4 +14,4 @@ execute if data storage designer:setts {gamemode_switch:false,plot_gamemode:"spe
 execute if data storage designer:setts {gamemode_switch:false,plot_gamemode:"adventure"} run scoreboard players set @a d.setts.plot_gamemode 3
 execute as @a[scores={d.state=1}] run function designer:switch_gamemode
 
-function designer:setts/server/tellraw
+function designer:setts/build_dialog

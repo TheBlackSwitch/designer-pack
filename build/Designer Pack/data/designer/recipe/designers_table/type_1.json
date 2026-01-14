@@ -1,0 +1,52 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "designer:designers_table",
+	"category": "misc",
+	"pattern": [
+		"pf",
+		"ww",
+		"ww"
+	],
+	"key": {
+		"p": "minecraft:paper",
+		"w": "#minecraft:planks",
+		"f": "minecraft:feather"
+	},
+	"result": {
+		"components": {
+			"minecraft:item_name": {
+				"text": "Designer's Table",
+				"color": "gold"
+			},
+			"minecraft:lore": [
+				{
+					"text": "Designer Pack",
+					"color": "blue",
+					"italic": false
+				},
+				"",
+				{
+					"text": "A table used to easily",
+					"color": "#4ba3b9",
+					"italic": false
+				},
+				{
+					"text": "teleport to a plot",
+					"color": "#4ba3b9",
+					"italic": false
+				}
+			],
+			"minecraft:entity_data": {
+				"id": "minecraft:marker",
+				"Tags": [
+					"d.designers_table.place"
+				]
+			},
+            "item_model": "smithing_table",
+            "enchantment_glint_override": true
+		},
+		"count": 1,
+		"id": "minecraft:cod_spawn_egg"
+	},
+	"show_notification": true
+}

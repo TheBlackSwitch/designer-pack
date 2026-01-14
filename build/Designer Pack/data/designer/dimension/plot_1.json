@@ -1,0 +1,16 @@
+{
+    "type": "designer:plot",
+    "generator": {
+        "type": "minecraft:flat",
+        "settings": {
+            "biome": "the_void",
+            "layers": [
+                {"block": "minecraft:bedrock", "height": 1},
+                {"block": "minecraft:stone", "height": 20},
+                {"block": "minecraft:dirt", "height": 5},
+                {"block": "minecraft:grass_block", "height": 1}
+            ],
+            "structure_overrides": []
+        }
+    }
+}

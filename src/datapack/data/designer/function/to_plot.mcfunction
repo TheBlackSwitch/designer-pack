@@ -16,6 +16,7 @@ execute if score @s d.state matches 0 at @s run function designer:player_storage
 
 tellraw @s [{"text": "[⚒ Designer ⚒]: ","color": "blue", "bold": true},{"text": "Teleporting to designer plot ", "color": "light_purple", "bold": false},{"score":{"name":"*","objective":"designer"}, "color": "light_purple", "bold": false}]
 tellraw @s [{"text": "[⚒ Designer ⚒]: ","color": "blue", "bold": true},{"text": "Use ", "color": "yellow","bold": false},{"text": "/trigger designer ","color": "gold","bold": false},{"text": "to go back to your world.", "color": "yellow","bold": false}]
+tellraw @s [{"text": "[⚒ Designer ⚒]: ","color": "blue", "bold": true},{"text": "TIP: You can use ", "color": "yellow","bold": false},{"text": "/trigger designer_config ","color": "gold","bold": false},{"text": "to edit designer's settings!", "color": "yellow","bold": false}]
 
 execute if score @s designer matches 1 run title @s title {"text": "Generic Flat","color": "green"}
 execute if score @s designer matches 2 run title @s title {"text": "Quartz Flat","color": "gray"}

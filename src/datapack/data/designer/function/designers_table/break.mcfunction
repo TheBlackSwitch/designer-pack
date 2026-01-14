@@ -1,7 +1,7 @@
 ## remove the blocks
 execute align xyz positioned ~0.5 ~ ~0.5 run kill @e[type=interaction,distance=..0.1,limit=1,sort=nearest]
-execute align xyz positioned ~-0.01 ~-0.01 ~-0.01 run kill @e[type=block_display,tag=d.designers_table,dy=0]
-execute align xyz positioned ~-0.01 ~-0.01 ~-0.01 run kill @e[type=item_display,tag=d.designers_table,dy=0]
+execute align xyz positioned ~ ~ ~ run kill @e[type=block_display,tag=d.designers_table,dy=0]
+execute align xyz positioned ~ ~ ~ run kill @e[type=item_display,tag=d.designers_table,dy=0]
 setblock ~ ~ ~ air
 
 

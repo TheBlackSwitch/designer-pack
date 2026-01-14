@@ -1,0 +1,615 @@
+
+#-------------------------------------------------------
+## Imports and variables
+#-------------------------------------------------------
+
+import designer:triggers/configs as config
+import json
+
+#-------------------------------------------------------
+## About dialog
+#-------------------------------------------------------
+
+dialog designer:about {
+	"type": "minecraft:multi_action",
+	"title": {
+		"text": "Datapacks - ",
+		"extra": [
+			{
+				"text": "Designer Pack",
+				"color": "gold"
+			}
+		],
+		"color": "aqua"
+	},
+	"external_title": "Designer Pack",
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"contents": ""
+		},
+		{
+			"type": "minecraft:plain_message",
+			"contents": {
+				"text": "Design your builds directly in your survival world without interference! \n",
+				"extra": [
+					{
+						"text": "/trigger designer",
+						"extra": [
+							{
+								"text": " to start using!",
+								"bold": false,
+								"underlined": false
+							}
+						],
+						"color": "aqua",
+						"bold": false,
+						"underlined": true,
+						"click_event": {
+							"action": "run_command",
+							"command": f"trigger designer_config set {config.const.SHOW_COMMAND}"
+						},
+						"hover_event": {
+							"action": "show_text",
+							"value": "Open in chat"
+						}
+					}
+				]
+			}
+		},
+		{
+			"type": "minecraft:plain_message",
+			"contents": {
+				"text": "v$designer-version$\n By ",
+				"extra": [
+					{
+						"text": "theblackswitch",
+						"color": "gray",
+						"underlined": true,
+						"click_event": {
+							"action": "open_url",
+							"url": "https://theblackswitch.com"
+						},
+						"hover_event": {
+							"action": "show_text",
+							"value": "Link: theblackswitch.com"
+						}
+					}
+				],
+				"color": "gray"
+			}
+		}
+	],
+	"inputs": [],
+    "after_action": "none",
+    "pause": false,
+	"exit_action": {
+		"label": "<- Back",
+		"width": 200,
+		"action": {
+			"type": "minecraft:show_dialog",
+			"dialog": "smithed:data_packs"
+		}
+	},
+	"columns": 2,
+	"actions": [
+		{
+			"label": "Website",
+			"tooltip": {
+				"text": "Link: modrinth.com"
+			},
+			"width": 100,
+			"action": {
+				"type": "minecraft:open_url",
+				"url": "https://modrinth.com/datapack/designer-pack"
+			}
+		},
+		{
+			"label": "Support Me",
+			"tooltip": "Link: buymeacoffee.com",
+			"width": 100,
+			"action": {
+				"type": "minecraft:open_url",
+				"url": "https://buymeacoffee.com/theblackswitch"
+			}
+		},
+		{
+			"label": "Configs ->",
+			"width": 100,
+			"action": {
+				"type": "minecraft:run_command",
+				"command": f"trigger designer_config set {config.const.OPEN_CONFIGS_ABOUT}"
+			}
+		}
+	]
+}
+
+#-------------------------------------------------------
+## Select Plot Dialog
+#-------------------------------------------------------
+
+dialog designer:plot_selection {
+	"type": "minecraft:multi_action",
+	"title": [
+		{
+			"text": "Designer Pack - Select Plot",
+			"color": "#80c1ff"
+		}
+	],
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"contents": ""
+		},
+		{
+			"type": "minecraft:plain_message",
+			"contents": {
+				"text": "Select a plot",
+				"color": "gold"
+			}
+		}
+	],
+	"inputs": [],
+	"can_close_with_escape": true,
+	"pause": false,
+	"after_action": "close",
+	"exit_action": {
+		"label": {
+			"text": "Cancel",
+			"color": "red"
+		}
+	},
+    "columns": 1,
+	"actions": [
+		{
+			"label": {
+				"text": "Plot 1: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "Super Flat",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+            "tooltip": {
+                "text": "Just the generic superflat preset"
+            },
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 1"
+			}
+		},
+        {
+			"label": {
+				"text": "Plot 2: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "Quartz Super Flat",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 2"
+			},
+            "tooltip": {
+                "text": "A superflat world with quartz blocks intead of grass and dirt"
+            }
+		},
+        {
+			"label": {
+				"text": "Plot 3: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+				        "text": " Redstone Ready",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 3"
+			},
+            "tooltip": {
+                "text": "A superflat world made of sandstone instead of grass and dirt"
+            }
+		},
+        {
+			"label": {
+				"text": "Plot 4: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "The Void",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 4"
+			},
+            "tooltip": {
+                "text": "A completely empty world"
+            }
+		},
+        {
+			"label": {
+				"text": "Plot 5: ",
+				"color": "#80c1ff",
+                "extra": [
+                    {
+                        "text": "Overworld Copy",
+                        "color": "light_purple"
+                    }
+                ]
+			},
+			"width": 200,
+			"action": {
+				"type": "run_command",
+				"command": "trigger designer set 5"
+			},
+            "tooltip": {
+                "text": "An exact copy of the overworld"
+            }
+		}
+	]
+}
+
+#-------------------------------------------------------
+## Config menu (not from the about page)
+#-------------------------------------------------------
+
+# $(plot_gamemode)   ==> The personal plot gamemode
+# $(title_enabled)   ==> True/False if plot title is enabled
+# $(default_plot)    ==> The default plot gamemode
+# $(default_world)   ==> The defualt world gamemode
+# $(gamemode_switch) ==> True/False Whether to allow switching gamemode on a plot
+# $(exit_action)     ==> the action executed when exiting the dialog
+
+dialog = {
+	"type": "minecraft:multi_action",
+    "after_action": "none",
+	"title": [
+		{
+			"text": "[⚒ Designer ⚒]: Configs",
+			"color": "#80c1ff"
+		}
+	],
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"contents": {
+				"text": "Edit Your Configs",
+				"color": "gold"
+			}
+		}
+	],
+	"inputs": [],
+	"can_close_with_escape": true,
+	"pause": false,
+	"exit_action": {
+        "label": {
+            "text":"Done",
+            "color":"green"
+        },
+        "width": 100,
+        "action": {
+            "type": "run_command",
+            "command": f"trigger designer_config set {config.const.CLOSE}"
+        }
+    },
+	"columns": 1,
+	"actions": [
+		{
+			"label": {
+				"text": "Personal Plot Gamemode: ",
+				"color": "#80c1ff",
+				"extra": [
+					{
+						"text": "$(plot_gamemode)",
+						"color": "light_purple"
+					}
+				]
+			},
+			"tooltip": {
+				"text": "Your gamemode on a plot world"
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": f"trigger designer_config set {config.const.EDIT_PLOT_GAMEMODE}"
+			}
+		},
+		{
+			"label": {
+				"text": "Plot Title Enabled: ",
+				"color": "#80c1ff",
+				"extra": [
+					{
+						"text": "$(title_enabled)",
+						"color": "light_purple"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": f"trigger designer_config set {config.const.ENABLE_TITLE}"
+			},
+			"tooltip": {
+				"text": "Whether to display a title when switching plots"
+			}
+		},
+		{
+			"label": "",
+			"width": 1,
+			"tooltip": ""
+		},
+		{
+			"label": {
+				"text": "Default Plot Gamemode: ",
+				"color": "#ff5c5c",
+				"extra": [
+					{
+						"text": "$(default_plot)",
+						"color": "gold"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": "function designer:setts/server/plot_gamemode"
+			},
+			"tooltip": {
+				"text": "The default gamemode on the plot",
+				"extra": [
+					{
+						"text": "\nRequires admin permissions to change!",
+						"color": "dark_red"
+					}
+				]
+			}
+		},
+		{
+			"label": {
+				"text": "Default World Gamemode: ",
+				"color": "#ff5c5c",
+				"extra": [
+					{
+						"text": "$(default_world)",
+						"color": "gold"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": "function designer:setts/server/main_gamemode"
+			},
+			"tooltip": {
+				"text": "The default gamemode in your main world",
+				"extra": [
+					{
+						"text": "\nRequires admin permissions to change!",
+						"color": "dark_red"
+					}
+				]
+			}
+		},
+		{
+			"label": {
+				"text": "Allow Plot Gamemode Switch: ",
+				"extra": [
+					{
+						"text": "$(gamemode_switch)",
+						"color": "gold"
+					}
+				],
+				"color": "#ff5c5c"
+			},
+			"tooltip": {
+				"text": "Whether players are allowed to change their gamemode on a plot",
+				"extra": [
+					{
+						"text": "\nRequires admin permissions to change!",
+						"color": "dark_red"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": "function designer:setts/server/switch_gamemode"
+			}
+		}
+	]
+}
+
+function designer:setts/show_dialog:
+    command = f"$dialog show @s {json.dumps(dialog)}"
+    raw command
+
+
+#-------------------------------------------------------
+## Config menu (from the about page)
+#-------------------------------------------------------
+
+# $(plot_gamemode)   ==> The personal plot gamemode
+# $(title_enabled)   ==> True/False if plot title is enabled
+# $(default_plot)    ==> The default plot gamemode
+# $(default_world)   ==> The defualt world gamemode
+# $(gamemode_switch) ==> True/False Whether to allow switching gamemode on a plot
+# $(exit_action)     ==> the action executed when exiting the dialog
+
+dialog = {
+	"type": "minecraft:multi_action",
+    "after_action": "none",
+	"title": [
+		{
+			"text": "[⚒ Designer ⚒]: Configs",
+			"color": "#80c1ff"
+		}
+	],
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"contents": {
+				"text": "Edit Your Configs",
+				"color": "gold"
+			}
+		}
+	],
+	"inputs": [],
+	"can_close_with_escape": true,
+	"pause": false,
+	"exit_action": {
+        "label": {
+            "text":"<- Back"
+        },
+        "width": 200,
+        "action": {
+            "type": "minecraft:show_dialog",
+            "dialog": "designer:about"
+        }
+    },
+	"columns": 1,
+	"actions": [
+		{
+			"label": {
+				"text": "Personal Plot Gamemode: ",
+				"color": "#80c1ff",
+				"extra": [
+					{
+						"text": "$(plot_gamemode)",
+						"color": "light_purple"
+					}
+				]
+			},
+			"tooltip": {
+				"text": "Your gamemode on a plot world"
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": f"trigger designer_config set {config.const.EDIT_PLOT_GAMEMODE_ABOUT}"
+			}
+		},
+		{
+			"label": {
+				"text": "Plot Title Enabled: ",
+				"color": "#80c1ff",
+				"extra": [
+					{
+						"text": "$(title_enabled)",
+						"color": "light_purple"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": f"trigger designer_config set {config.const.ENABLE_TITLE_ABOUT}"
+			},
+			"tooltip": {
+				"text": "Whether to display a title when switching plots"
+			}
+		},
+		{
+			"label": "",
+			"width": 1,
+			"tooltip": ""
+		},
+		{
+			"label": {
+				"text": "Default Plot Gamemode: ",
+				"color": "#ff5c5c",
+				"extra": [
+					{
+						"text": "$(default_plot)",
+						"color": "gold"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": "function designer:setts/server/plot_gamemode"
+			},
+			"tooltip": {
+				"text": "The default gamemode on the plot",
+				"extra": [
+					{
+						"text": "\nRequires admin permissions to change!",
+						"color": "dark_red"
+					}
+				]
+			}
+		},
+		{
+			"label": {
+				"text": "Default World Gamemode: ",
+				"color": "#ff5c5c",
+				"extra": [
+					{
+						"text": "$(default_world)",
+						"color": "gold"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": "function designer:setts/server/main_gamemode"
+			},
+			"tooltip": {
+				"text": "The default gamemode in your main world",
+				"extra": [
+					{
+						"text": "\nRequires admin permissions to change!",
+						"color": "dark_red"
+					}
+				]
+			}
+		},
+		{
+			"label": {
+				"text": "Allow Plot Gamemode Switch: ",
+				"extra": [
+					{
+						"text": "$(gamemode_switch)",
+						"color": "gold"
+					}
+				],
+				"color": "#ff5c5c"
+			},
+			"tooltip": {
+				"text": "Whether players are allowed to change their gamemode on a plot",
+				"extra": [
+					{
+						"text": "\nRequires admin permissions to change!",
+						"color": "dark_red"
+					}
+				]
+			},
+			"width": 220,
+			"action": {
+				"type": "run_command",
+				"command": "function designer:setts/server/switch_gamemode"
+			}
+		}
+	]
+}
+
+function designer:setts/show_dialog_about:
+    command = f"$dialog show @s {json.dumps(dialog)}"
+    raw command

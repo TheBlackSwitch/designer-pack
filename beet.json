@@ -1,21 +1,19 @@
 {
     "data_pack": {
-        "load": ["src/datapack"],
-        "name": "Template Datapack"
-    },
-    "resource_pack": {
-        "load": ["src/resourcepack"],
-        "name": "Template Resourcepack"
+        "load": [
+            "libraries/SwitchLib-V2.0.0.zip",
+            "src/datapack"
+        ],
+        "name": "Designer Pack"
     },
     "pipeline": [
-        "plugins.custom.main",
-        "mecha",
-        "plugins.custom.finalyze"
+        "plugins.aliases",
+        "mecha"
     ],
-    "id": "tp",
-    "name": "template",
-    "description": "",
-    "version": "1.0.0a",
+    "id": "designer",
+    "name": "designer",
+    "description": "§aDesign your builds directly in your survival world or server §ewithout switching or interference!",
+    "version": "2.3.0a",
     "require": [
         "bolt",
         "bolt_expressions"
@@ -23,7 +21,27 @@
     "output": "build",
     "meta": {
         "bolt": {
-            "entrypoint": ["tp:main"]
-        }
+            "entrypoint": ["designer:main"]
+        },
+        "aliases": [
+            {
+                "regex": "\\$version\\$",
+                "replace": "v2.0",
+                "comment": "The switch lib major version"
+            },
+            {
+                "regex": "\\$patch\\$",
+                "replace": "patch-0",
+                "comment": "The switch lib major version"
+            },
+            {
+                "regex": "\\$designer-version\\$",
+                "replace": "2.3.0a"
+            },
+            {
+                "regex": "\\$test\\$",
+                "replace": "say hi"
+            }
+        ]
     }
 }

@@ -1,4 +1,10 @@
-##Ticks
-execute if score .5 slow_tick matches 4 as @a at @s run function designer:player
-execute as @a at @s run function designer:setts/client/tick
+
+# Dialog Menu's
+execute as @a at @s:
+    function designer:player
+    function designer:setts/tick
+
+# Designers Table block
 function designer:designers_table/tick
+
+schedule function designer:tick 1t replace

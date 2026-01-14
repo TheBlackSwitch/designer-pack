@@ -1,6 +1,6 @@
 {
     "values": [
-        "theblackswitch:load",
+        "#theblackswitch:load",
         "designer:load"
     ]
 }

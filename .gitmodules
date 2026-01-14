@@ -1,6 +1,0 @@
-[submodule "data/theblackswitch"]
-	path = data/theblackswitch
-	url = https://github.com/TheBlackSwitch/datapack-common-code
-[submodule "src/data/theblackswitch"]
-	path = src/data/theblackswitch
-	url = https://github.com/TheBlackSwitch/datapack-common-code

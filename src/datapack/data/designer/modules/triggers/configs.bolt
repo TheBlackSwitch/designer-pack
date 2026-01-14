@@ -1,0 +1,20 @@
+
+
+#-------------------------------------------------------
+## Constants
+#-------------------------------------------------------
+
+# define all trigger numbers to avoid magic numbers
+class const:
+
+    CLOSE = 90000
+    SHOW_COMMAND = 90001
+
+    EDIT_PLOT_GAMEMODE = 97460
+    ENABLE_TITLE = 97461
+    OPEN_CONFIGS = 1
+    
+    # open the about section dialog
+    EDIT_PLOT_GAMEMODE_ABOUT = 97470
+    ENABLE_TITLE_ABOUT = 97461
+    OPEN_CONFIGS_ABOUT = 12353
