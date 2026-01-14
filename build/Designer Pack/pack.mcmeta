@@ -2,7 +2,8 @@
   "pack": {
     "min_format": 80,
     "max_format": [
-      94.1
+      94,
+      1
     ],
     "supported_formats": [
       80,
