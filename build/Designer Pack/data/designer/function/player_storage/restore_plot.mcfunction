@@ -1,6 +1,6 @@
 execute store result storage theblackswitch:temp player_storage.player_id int 1 run scoreboard players get @s tbs.ID
-data modify storage theblackswitch:temp player_storage.path set value "designer:temp plot"
-data modify storage theblackswitch:temp player_storage.result set value "plot"
+data modify storage theblackswitch:temp player_storage.path set value "plot"
+data modify storage theblackswitch:temp player_storage.result set value "designer:temp plot"
 function #theblackswitch:v2.0/player_storage/get with storage theblackswitch:temp player_storage
 summon chest_minecart ~ ~ ~ {Tags: ["player_inv", "temp_storage"], NoGravity: 1b, Invulnerable: 1b}
 summon chest_minecart ~ ~ ~ {Tags: ["player_end", "temp_storage"], NoGravity: 1b, Invulnerable: 1b}
