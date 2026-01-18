@@ -86,24 +86,5 @@
             "# All functions that run during the game",
             "    "
         ]
-    },
-
-    // things for my library
-    "Search ID From Source": {
-        "prefix": [">> Search ID From Source",">> SIFS"],
-        "body": "scoreboard players operation .search tbs.ID = ${1:<source>} tbs.ID",
-        "description": "Set the .search id from a source",
-        "scope": "mcfunction,json"
-    },
-    "Search ID Set Target": {
-        "prefix": [">> Search ID Set Target",">> SIST"],
-        "body": "scoreboard players operation ${1:<target>} tbs.ID = .search tbs.ID",
-        "description": "Apply an id from .search to a target",
-        "scope": "mcfunction,json"
-    },
-    "Search ID Check": {
-        "prefix": [">> Search ID Check",">> SIC"],
-        "scope": "mcfunction,json",
-        "body": "${1|if predicate theblackswitch:matches_search_id,predicate=theblackswitch:matches_search_id,predicate=theblackswitch:matches_search_id\\,limit=1|}"
     }
 }
