@@ -4,7 +4,7 @@ tellraw @a [{"text":"Designer Pack Reloaded!","color":"green","bold": true}]
 ## Enable Library Features
 #-------------------------------------------------------
 
-function #theblackswitch:$version$/slow_tick/enable
+function #theblackswitch:__version__/slow_tick/enable
 
 
 #-------------------------------------------------------
@@ -28,6 +28,8 @@ scoreboard objectives add d.prev.spawn.point.y dummy
 scoreboard objectives add d.prev.spawn.point.z dummy
 
 scoreboard objectives add d.cod_spawn_egg_use used:cod_spawn_egg
+
+scoreboard objectives add d.damage dummy
 
 #-------------------------------------------------------
 ## Other Inits

@@ -1,7 +1,7 @@
 {
     "comment": "This file contains the basic data for exporting the datapack file. Run export-dp -h for more info",
     "export": {
-        "version": "2.3.0c"
+        "version": "2.3.0b"
     },
     "cache": {
         "rp_source": "",

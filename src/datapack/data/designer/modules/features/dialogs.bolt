@@ -60,7 +60,7 @@ dialog designer:about {
 		{
 			"type": "minecraft:plain_message",
 			"contents": {
-				"text": "v$designer-version$\n By ",
+				"text": "v__designer-version__\n By ",
 				"extra": [
 					{
 						"text": "theblackswitch",

@@ -1,3 +1,4 @@
+data remove storage designer:temp plot
 execute store result storage theblackswitch:temp player_storage.player_id int 1 run scoreboard players get @s tbs.ID
 data modify storage theblackswitch:temp player_storage.path set value "plot"
 data modify storage theblackswitch:temp player_storage.result set value "designer:temp plot"

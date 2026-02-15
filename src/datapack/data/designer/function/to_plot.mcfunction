@@ -1,4 +1,7 @@
-##AA compat
+#-------------------------------------------------------
+## Fix Ancient Artifacts Compat
+#-------------------------------------------------------
+
 scoreboard players operation @s d.prev_artifact_slot_1 = @s artifact_slot_1
 scoreboard players operation @s d.prev_artifact_slot_2 = @s artifact_slot_2
 scoreboard players operation @s d.prev_artifact_slot_3 = @s artifact_slot_3
@@ -10,6 +13,19 @@ scoreboard players set @s d.was_focused 0
 execute if entity @s[tag=focused] run scoreboard players set @s d.was_focused 1
 tag @s remove focused
 
+#-------------------------------------------------------
+## Init scores
+#-------------------------------------------------------
+
+execute unless score @s d.setts.plot_gamemode matches 0..:
+    execute if data storage designer:setts {plot_gamemode:"survival"} run scoreboard players set @s s.setts.plot_gamemode 0
+    execute if data storage designer:setts {plot_gamemode:"creative"} run scoreboard players set @s s.setts.plot_gamemode 1
+    execute if data storage designer:setts {plot_gamemode:"spectator"} run scoreboard players set @s s.setts.plot_gamemode 2
+    execute if data storage designer:setts {plot_gamemode:"adventure"} run scoreboard players set @s s.setts.plot_gamemode 3
+
+#-------------------------------------------------------
+## Handle transfer
+#-------------------------------------------------------
 
 execute if score @s d.state matches 0 at @s run function designer:player_storage/store_main
 execute if score @s d.state matches 0 at @s run function designer:player_storage/restore_plot
@@ -50,9 +66,9 @@ scoreboard players set @s d.state 1
 scoreboard players set @s designer -1
 
 execute store result score @s d.curr.spawn.point.x run data get entity @s respawn.pos[0]
-execute store result score @s d.curr.spawn.point.y run data get entity @s respawn.pos[0]
-execute store result score @s d.curr.spawn.point.z run data get entity @s respawn.pos[0]
+execute store result score @s d.curr.spawn.point.y run data get entity @s respawn.pos[1]
+execute store result score @s d.curr.spawn.point.z run data get entity @s respawn.pos[2]
 
-execute store result score @s d.prev.spawn.point.x run data get entity @s respawn.pos[0]
-execute store result score @s d.prev.spawn.point.y run data get entity @s respawn.pos[0]
-execute store result score @s d.prev.spawn.point.z run data get entity @s respawn.pos[0]
+execute store result score @s d.prev.spawn.point.x run data get entity @s respawn.pos[1]
+execute store result score @s d.prev.spawn.point.y run data get entity @s respawn.pos[2]
+execute store result score @s d.prev.spawn.point.z run data get entity @s respawn.pos[3]

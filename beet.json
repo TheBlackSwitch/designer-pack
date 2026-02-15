@@ -1,46 +1,47 @@
 {
     "data_pack": {
         "load": [
-            "libraries/SwitchLib-V2.0.0.zip",
+            "libraries/SwitchLib-V2.0.1.zip",
             "src/datapack"
         ],
         "name": "Designer Pack"
     },
     "pipeline": [
+        "plugins.overlays.init",
+        "mecha",
         "plugins.aliases",
-        "mecha"
+        "plugins.overlays.apply"
     ],
     "id": "designer",
     "name": "designer",
     "description": "§aDesign your builds directly in your survival world or server §ewithout switching or interference!",
-    "version": "2.3.0a",
+    "version": "2.3.0b",
     "require": [
         "bolt",
-        "bolt_expressions"
+        "bolt_expressions",
+        "bolt_native_macros"
     ],
     "output": "build",
     "meta": {
         "bolt": {
-            "entrypoint": ["designer:main"]
+            "entrypoint": [
+                "designer:main"
+            ]
         },
         "aliases": [
             {
-                "regex": "\\$version\\$",
+                "regex": "__version__",
                 "replace": "v2.0",
                 "comment": "The switch lib major version"
             },
             {
-                "regex": "\\$patch\\$",
-                "replace": "patch-0",
+                "regex": "__patch__",
+                "replace": "patch-1",
                 "comment": "The switch lib major version"
             },
             {
-                "regex": "\\$designer-version\\$",
-                "replace": "2.3.0a"
-            },
-            {
-                "regex": "\\$test\\$",
-                "replace": "say hi"
+                "regex": "__designer-version__",
+                "replace": "2.3.0b"
             }
         ]
     }

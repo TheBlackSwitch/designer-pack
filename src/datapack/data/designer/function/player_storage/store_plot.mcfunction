@@ -8,19 +8,19 @@ data modify storage designer:temp player_storage.source set value 'storage desig
 # Store the object in the storage (use set from because macro parsing can be weird sometimes)
 data modify storage designer:temp player_storage.value set from entity @n[type=chest_minecart,distance=..1,tag=player_inv] Items
 data modify storage designer:temp player_storage.path set value 'plot.inv'
-function #theblackswitch:$version$/player_storage/set_from with storage designer:temp player_storage
+function #theblackswitch:__version__/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
 
 # Store the object in the storage (use set from because macro parsing can be weird sometimes)
 data modify storage designer:temp player_storage.value set from entity @n[type=chest_minecart,distance=..1,tag=player_hot] Items
 data modify storage designer:temp player_storage.path set value 'plot.hot'
-function #theblackswitch:$version$/player_storage/set_from with storage designer:temp player_storage
+function #theblackswitch:__version__/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
 
 # Store the object in the storage (use set from because macro parsing can be weird sometimes)
 data modify storage designer:temp player_storage.value set from entity @n[type=chest_minecart,distance=..1,tag=player_end] Items
 data modify storage designer:temp player_storage.path set value 'plot.end'
-function #theblackswitch:$version$/player_storage/set_from with storage designer:temp player_storage
+function #theblackswitch:__version__/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
 
 # Store the position
@@ -31,7 +31,7 @@ execute store result storage designer:temp player_storage.value.Z int 1 run data
 # Store the dimension
 data modify storage designer:temp player_storage.value.dim set from entity @s Dimension
 data modify storage designer:temp player_storage.path set value 'plot.Pos'
-function #theblackswitch:$version$/player_storage/set_from with storage designer:temp player_storage
+function #theblackswitch:__version__/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
 
 # Clear the player

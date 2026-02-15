@@ -13,6 +13,7 @@ scoreboard objectives add d.prev.spawn.point.x dummy
 scoreboard objectives add d.prev.spawn.point.y dummy
 scoreboard objectives add d.prev.spawn.point.z dummy
 scoreboard objectives add d.cod_spawn_egg_use used:cod_spawn_egg
+scoreboard objectives add d.damage dummy
 execute unless data storage designer:setts generated run function designer:setts/init
 scoreboard objectives add d.prev_artifact_slot_1 dummy
 scoreboard objectives add d.prev_artifact_slot_2 dummy

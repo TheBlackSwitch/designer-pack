@@ -8,6 +8,7 @@ function ancient_artifacts:artifacts/reset
 scoreboard players set @s d.was_focused 0
 execute if entity @s[tag=focused] run scoreboard players set @s d.was_focused 1
 tag @s remove focused
+execute unless score @s d.setts.plot_gamemode matches 0.. run function designer:to_plot/nested_execute_0
 execute if score @s d.state matches 0 at @s run function designer:player_storage/store_main
 execute if score @s d.state matches 0 at @s run function designer:player_storage/restore_plot
 tellraw @s [{text: "[\u2692 Designer \u2692]: ", color: "blue", bold: true}, {text: "Teleporting to designer plot ", color: "light_purple", bold: false}, {score: {name: "*", objective: "designer"}, color: "light_purple", bold: false}]
@@ -36,8 +37,8 @@ effect give @s minecraft:blindness 2 0 true
 scoreboard players set @s d.state 1
 scoreboard players set @s designer -1
 execute store result score @s d.curr.spawn.point.x run data get entity @s respawn.pos[0]
-execute store result score @s d.curr.spawn.point.y run data get entity @s respawn.pos[0]
-execute store result score @s d.curr.spawn.point.z run data get entity @s respawn.pos[0]
-execute store result score @s d.prev.spawn.point.x run data get entity @s respawn.pos[0]
-execute store result score @s d.prev.spawn.point.y run data get entity @s respawn.pos[0]
-execute store result score @s d.prev.spawn.point.z run data get entity @s respawn.pos[0]
+execute store result score @s d.curr.spawn.point.y run data get entity @s respawn.pos[1]
+execute store result score @s d.curr.spawn.point.z run data get entity @s respawn.pos[2]
+execute store result score @s d.prev.spawn.point.x run data get entity @s respawn.pos[1]
+execute store result score @s d.prev.spawn.point.y run data get entity @s respawn.pos[2]
+execute store result score @s d.prev.spawn.point.z run data get entity @s respawn.pos[3]
