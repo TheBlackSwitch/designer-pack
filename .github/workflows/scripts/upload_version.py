@@ -394,7 +394,7 @@ if package_as_mod:
 
         elif os.path.exists(f'{datapack_folder_path}/pack.png') and enabled_dp:
             myzip.write(f"{datapack_folder_path}/pack.png","pack.png")
-            myzip.write(f"{resourcepack_folder_path}/pack.png", img_path)
+            myzip.write(f"{datapack_folder_path}/pack.png", img_path)
 
         # Merge pack.mcmeta files
         merged = {}
