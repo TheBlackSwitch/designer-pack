@@ -384,8 +384,8 @@ if package_as_mod:
     img_path = f"{mod_name_ascii}_pack.png"
 
     with ZipFile(mod_path, "w", zipfile.ZIP_DEFLATED) as myzip:
-        zipSubFolders(datapack_folder_path, myzip)
-        zipSubFolders(resourcepack_folder_path, myzip)
+        if enabled_dp: zipSubFolders(datapack_folder_path, myzip)
+        if enabled_rp: zipSubFolders(resourcepack_folder_path, myzip)
 
         # Handle pack.png
         if os.path.exists(f'{resourcepack_folder_path}/pack.png') and enabled_rp:
