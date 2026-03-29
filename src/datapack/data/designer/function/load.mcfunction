@@ -46,4 +46,6 @@ scoreboard objectives add d.prev_artifact_slot_2 dummy
 scoreboard objectives add d.prev_artifact_slot_3 dummy
 scoreboard objectives add d.was_focused dummy
 
+
+
 schedule function designer:tick 1t

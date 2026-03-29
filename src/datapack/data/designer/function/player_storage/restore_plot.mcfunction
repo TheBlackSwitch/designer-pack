@@ -19,7 +19,8 @@ function designer:player_storage/restore_inv
 execute as @e[tag=temp_storage] run data modify entity @s Items set value []
 kill @e[tag=temp_storage]
 
-function designer:tp with storage designer:temp plot.Pos
+execute if data storage designer:temp plot.Pos run function designer:tp with storage designer:temp plot.Pos
+execute unless data storage designer:temp plot.Pos run tp @s 0 ~ 0
 
 execute as @e[tag=temp_storage] run data remove entity @s Items
 kill @e[tag=temp_storage]
