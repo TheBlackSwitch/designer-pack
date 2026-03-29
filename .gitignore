@@ -8,3 +8,4 @@ __pycache__/
 *.pdn
 log_terminal_cache.json
 export/
+__todo__.web
