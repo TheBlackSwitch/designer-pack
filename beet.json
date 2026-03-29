@@ -15,7 +15,7 @@
     "id": "designer",
     "name": "designer",
     "description": "§aDesign your builds directly in your survival world or server §ewithout switching or interference!",
-    "version": "2.3.0c",
+    "version": "2.3.0e",
     "require": [
         "bolt",
         "bolt_expressions",
