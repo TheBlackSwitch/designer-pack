@@ -1,6 +1,5 @@
-execute at @s run function designer:player_storage/store_plot
-clear @s
-execute at @s run function designer:player_storage/restore_main
+function designer:player_storage/store_plot
+function designer:player_storage/restore_main
 
 tellraw @s [{"text": "[⚒ Designer ⚒]: ","color": "blue", "bold": true},{"text": "Teleporting back!", "color": "light_purple", "bold": false}]
 execute at @s run playsound block.portal.travel master @s ~ ~ ~ 0.3 2
@@ -23,8 +22,10 @@ effect give @s minecraft:blindness 2 0 true
 scoreboard players set @s d.state 0
 scoreboard players set @s designer -1
 
-execute store result score @s d.curr.spawn.point.x run data get entity @s respawn.pos[0]
-execute store result score @s d.curr.spawn.point.y run data get entity @s respawn.pos[0]
-execute store result score @s d.curr.spawn.point.z run data get entity @s respawn.pos[0]
+execute unless entity @s[tag=d.has_respawn_point] at @s positioned 0.5 0 0.5 positioned over world_surface run spawnpoint @s ~ ~ ~
+execute if entity @s[tag=d.has_respawn_point] at @s:
+    execute store result storage designer:temp x int 1 run scoreboard players get @s d.spawn.point.x
+    execute store result storage designer:temp y int 1 run scoreboard players get @s d.spawn.point.y
+    execute store result storage designer:temp z int 1 run scoreboard players get @s d.spawn.point.z
 
-execute if function designer:detect_respawn_change in minecraft:overworld positioned 0.0 0.0 0.0 positioned over world_surface run spawnpoint @s ~ ~ ~
+    function designer:set_spawnpoint with storage designer:temp

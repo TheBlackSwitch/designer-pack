@@ -29,6 +29,11 @@ data modify storage designer:temp player_storage.path set value 'main.xp'
 function #theblackswitch:__version__/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
 
+# Travelers Backpack Compat
+execute if score #installed.travelers_backpack tbs.server_data matches 1:
+    function designer:__compat__/travelers_backpack/store/main
+    function designer:run_command {command:"tb remove"}
+
 # Save the current position
 execute store result storage designer:temp player_storage.value.X int 1 run data get entity @s Pos[0]
 execute store result storage designer:temp player_storage.value.Y int 1 run data get entity @s Pos[1]

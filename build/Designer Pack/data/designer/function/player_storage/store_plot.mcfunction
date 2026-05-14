@@ -13,15 +13,16 @@ data modify storage designer:temp player_storage.value set from entity @n[type=c
 data modify storage designer:temp player_storage.path set value "plot.end"
 function #theblackswitch:v2.0/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
-execute store result storage designer:temp player_storage.value.X int 1 run data get entity @s Pos[0]
-execute store result storage designer:temp player_storage.value.Y int 1 run data get entity @s Pos[1]
-execute store result storage designer:temp player_storage.value.Z int 1 run data get entity @s Pos[2]
+execute if score #installed.travelers_backpack tbs.server_data matches 1 run function designer:player_storage/store_plot/nested_execute_0
+execute unless score @s d.state matches -1 store result storage designer:temp player_storage.value.X int 1 run data get entity @s Pos[0]
+execute unless score @s d.state matches -1 store result storage designer:temp player_storage.value.Y int 1 run data get entity @s Pos[1]
+execute unless score @s d.state matches -1 store result storage designer:temp player_storage.value.Z int 1 run data get entity @s Pos[2]
 data modify storage designer:temp player_storage.value.dim set from entity @s Dimension
 data modify storage designer:temp player_storage.path set value "plot.Pos"
 function #theblackswitch:v2.0/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
-execute as @e[tag=temp_storage] run data remove entity @s Items
-kill @e[tag=temp_storage]
+execute as @e[type=minecraft:minecart, tag=temp_storage] run data remove entity @s Items
+kill @e[type=minecraft:minecart, tag=temp_storage]
 clear @s
 effect clear @s
 xp set @s 0 levels

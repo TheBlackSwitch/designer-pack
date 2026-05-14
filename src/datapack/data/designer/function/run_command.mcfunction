@@ -1,0 +1,2 @@
+$$(command)
+return 1

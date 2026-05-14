@@ -12,7 +12,9 @@ data modify entity @n[type=chest_minecart, distance=..1, tag=player_hot, tag=tem
 function designer:player_storage/restore_inv
 execute as @e[tag=temp_storage] run data modify entity @s Items set value []
 kill @e[tag=temp_storage]
-execute if data storage designer:temp plot.Pos run function designer:tp with storage designer:temp plot.Pos
-execute unless data storage designer:temp plot.Pos run tp @s 0 ~ 0
+execute if score #installed.travelers_backpack tbs.server_data matches 1 run function designer:__compat__/travelers_backpack/restore/plot
+execute unless data storage designer:temp plot.Pos.X run data modify storage designer:temp plot.Pos merge value {X: 0, Y: "~", Z: 0, dim: "minecraft:overworld"}
+function designer:tp with storage designer:temp plot.Pos
+execute if score #installed.travelers_backpack tbs.server_data matches 1 run function designer:__compat__/travelers_backpack/restore/teleport
 execute as @e[tag=temp_storage] run data remove entity @s Items
 kill @e[tag=temp_storage]

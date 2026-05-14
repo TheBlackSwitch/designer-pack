@@ -65,10 +65,13 @@ effect give @s minecraft:blindness 2 0 true
 scoreboard players set @s d.state 1
 scoreboard players set @s designer -1
 
-execute store result score @s d.curr.spawn.point.x run data get entity @s respawn.pos[0]
-execute store result score @s d.curr.spawn.point.y run data get entity @s respawn.pos[1]
-execute store result score @s d.curr.spawn.point.z run data get entity @s respawn.pos[2]
+execute store result score @s d.spawn.point.x run data get entity @s respawn.pos[0]
+execute store result score @s d.spawn.point.y run data get entity @s respawn.pos[1]
+execute store result score @s d.spawn.point.z run data get entity @s respawn.pos[2]
 
-execute store result score @s d.prev.spawn.point.x run data get entity @s respawn.pos[0]
-execute store result score @s d.prev.spawn.point.y run data get entity @s respawn.pos[1]
-execute store result score @s d.prev.spawn.point.z run data get entity @s respawn.pos[2]
+tag @s remove d.has_respawn_point
+execute if data entity @s respawn run tag @s add d.has_respawn_point
+
+execute at @s run spawnpoint @s ~ ~ ~
+
+

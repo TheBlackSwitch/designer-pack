@@ -17,6 +17,7 @@ data modify storage designer:temp player_storage.value set from entity @s XpLeve
 data modify storage designer:temp player_storage.path set value "main.xp"
 function #theblackswitch:v2.0/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
+execute if score #installed.travelers_backpack tbs.server_data matches 1 run function designer:player_storage/store_main/nested_execute_0
 execute store result storage designer:temp player_storage.value.X int 1 run data get entity @s Pos[0]
 execute store result storage designer:temp player_storage.value.Y int 1 run data get entity @s Pos[1]
 execute store result storage designer:temp player_storage.value.Z int 1 run data get entity @s Pos[2]

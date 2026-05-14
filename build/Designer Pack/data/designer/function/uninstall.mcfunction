@@ -10,4 +10,7 @@ scoreboard objectives remove d.curr.spawn.point.z
 scoreboard objectives remove d.prev.spawn.point.x
 scoreboard objectives remove d.prev.spawn.point.y
 scoreboard objectives remove d.prev.spawn.point.z
+scoreboard objectives remove d.spawn.point.x
+scoreboard objectives remove d.spawn.point.y
+scoreboard objectives remove d.spawn.point.z
 scoreboard objectives remove d.cod_spawn_egg_use

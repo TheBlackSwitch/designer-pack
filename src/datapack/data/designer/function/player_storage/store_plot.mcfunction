@@ -23,10 +23,15 @@ data modify storage designer:temp player_storage.path set value 'plot.end'
 function #theblackswitch:__version__/player_storage/set_from with storage designer:temp player_storage
 data remove storage designer:temp player_storage.value
 
+# Travelers Backpack Compat
+execute if score #installed.travelers_backpack tbs.server_data matches 1:
+    function designer:__compat__/travelers_backpack/store/plot
+    function designer:run_command {command:"tb remove"}
+
 # Store the position
-execute store result storage designer:temp player_storage.value.X int 1 run data get entity @s Pos[0]
-execute store result storage designer:temp player_storage.value.Y int 1 run data get entity @s Pos[1]
-execute store result storage designer:temp player_storage.value.Z int 1 run data get entity @s Pos[2]
+execute unless score @s d.state matches -1 store result storage designer:temp player_storage.value.X int 1 run data get entity @s Pos[0]
+execute unless score @s d.state matches -1 store result storage designer:temp player_storage.value.Y int 1 run data get entity @s Pos[1]
+execute unless score @s d.state matches -1 store result storage designer:temp player_storage.value.Z int 1 run data get entity @s Pos[2]
 
 # Store the dimension
 data modify storage designer:temp player_storage.value.dim set from entity @s Dimension
@@ -35,8 +40,8 @@ function #theblackswitch:__version__/player_storage/set_from with storage design
 data remove storage designer:temp player_storage.value
 
 # Clear the player
-execute as @e[tag=temp_storage] run data remove entity @s Items
-kill @e[tag=temp_storage]
+execute as @e[type=minecraft:minecart,tag=temp_storage] run data remove entity @s Items
+kill @e[type=minecraft:minecart,tag=temp_storage]
 clear @s
 effect clear @s
 xp set @s 0 levels

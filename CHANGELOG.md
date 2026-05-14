@@ -1,8 +1,8 @@
-**THIS COULD BREAK IF YOU HAVE BOTH ANCIENT ARTIFACTS AND DESIGNER PACK INSTALLED, ALL PLAYERS SHOULD GO TO THE MAIN WORLD BEFORE UPDATING**
 
-A backup of all inventory data will be made, you can run ``/function designer:grab_player_data`` as the player that lost it's inventory
+# New features
+- Added compatability for travelers backpack
 
 # Bugs fixed
-- Fixed a critical issue with player ID 
-- You should now spawn at x: 0 z: 0 when going to a plot
-- The gamemode on a plot wasn't set properly when first joining the world
+- Spawnpoints could sometimes break when using designer
+- When dying on a plot you could loose your inventory
+- When going to designer for the first time, you weren't teleported to X: 0 Z: 0

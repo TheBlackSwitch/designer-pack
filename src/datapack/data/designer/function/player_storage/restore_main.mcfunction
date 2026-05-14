@@ -16,10 +16,18 @@ data modify entity @n[type=chest_minecart,distance=..1,tag=player_hot,tag=temp_s
 
 function designer:player_storage/restore_inv
 
-execute as @e[tag=temp_storage] run data modify entity @s Items set value []
-kill @e[tag=temp_storage]
-
 execute store result score @s d.XpLevels run data get storage designer:temp main.xp
 function designer:player_storage/restore_xp
 
+
+# Travelers Backpack Compat
+execute if score #installed.travelers_backpack tbs.server_data matches 1 run function designer:__compat__/travelers_backpack/restore/main
+
 function designer:tp with storage designer:temp main.Pos
+
+# Travelers Backpack Compat
+execute if score #installed.travelers_backpack tbs.server_data matches 1 run function designer:__compat__/travelers_backpack/restore/teleport
+
+
+execute as @e[tag=temp_storage] run data modify entity @s Items set value []
+kill @e[tag=temp_storage]
