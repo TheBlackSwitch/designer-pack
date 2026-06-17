@@ -2,8 +2,8 @@
     "id": "designer",
     "pack": {
         "min_format": 80,
-        "max_format": [101,1],
-        "supported_formats": [80, 101],
+        "max_format": [107,1],
+        "supported_formats": [80, 107],
         "pack_format": 80,
         "description": "§aDesign your builds directly in your survival world or server §ewithout switching or interference!"
     }
