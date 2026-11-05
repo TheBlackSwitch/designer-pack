@@ -1,3 +1,4 @@
+execute if data storage designer:setts {gamemode_switch: false} run return run function designer:setts/client/plot_gamemode/nested_return_0
 execute if score @s d.setts.plot_gamemode matches 0 run scoreboard players set .plot_gamemode temp 1
 execute if score @s d.setts.plot_gamemode matches 1 run scoreboard players set .plot_gamemode temp 2
 execute if score @s d.setts.plot_gamemode matches 2 run scoreboard players set .plot_gamemode temp 3

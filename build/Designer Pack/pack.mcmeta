@@ -15,6 +15,18 @@
   "overlays": {
     "entries": [
       {
+        "directory": "backport_26.2",
+        "min_format": 0,
+        "max_format": [
+          107,
+          1
+        ],
+        "formats": [
+          0,
+          107
+        ]
+      },
+      {
         "directory": "backport_26.1.2",
         "min_format": 0,
         "max_format": [

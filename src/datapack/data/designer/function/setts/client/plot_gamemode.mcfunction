@@ -1,3 +1,9 @@
+
+execute if data storage designer:setts {gamemode_switch:false} run return:
+    execute at @s run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 0.85
+    function designer:setts/build_dialog
+    scoreboard players set @s designer_config 0
+
 execute if score @s d.setts.plot_gamemode matches 0 run scoreboard players set .plot_gamemode temp 1
 execute if score @s d.setts.plot_gamemode matches 1 run scoreboard players set .plot_gamemode temp 2
 execute if score @s d.setts.plot_gamemode matches 2 run scoreboard players set .plot_gamemode temp 3

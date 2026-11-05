@@ -5,9 +5,9 @@
             "entries": [
                 {
                     "type": "item",
-                    "functions": [
+                    "modifier": [
                         {
-                            "function": "set_components",
+                            "type": "set_components",
                             "components": {
                                 "minecraft:item_name": {
                                     "text": "Designer's Table",

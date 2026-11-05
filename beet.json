@@ -1,7 +1,7 @@
 {
     "data_pack": {
         "load": [
-            "libraries/SwitchLib-V2.0.3.zip",
+            "libraries/SwitchLib-V2.0.5.zip",
             "src/datapack"
         ],
         "name": "Designer Pack"
@@ -15,7 +15,7 @@
     "id": "designer",
     "name": "designer",
     "description": "§aDesign your builds directly in your survival world or server §ewithout switching or interference!",
-    "version": "2.3.0h",
+    "version": "2.4.0a",
     "require": [
         "bolt",
         "bolt_expressions",
@@ -36,12 +36,12 @@
             },
             {
                 "regex": "__patch__",
-                "replace": "patch-3",
+                "replace": "patch-5",
                 "comment": "The switch lib major version"
             },
             {
                 "regex": "__designer-version__",
-                "replace": "2.3.0h"
+                "replace": "2.4.0a"
             }
         ]
     }

@@ -1,8 +1,6 @@
 
 # New features
-- Added compatability for travelers backpack
+- Updated to 26.3
 
 # Bugs fixed
-- Spawnpoints could sometimes break when using designer
-- When dying on a plot you could loose your inventory
-- When going to designer for the first time, you weren't teleported to X: 0 Z: 0
+- Disabling gamemode switch on a plot didn't work.
